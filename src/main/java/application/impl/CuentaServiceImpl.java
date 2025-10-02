@@ -6,7 +6,6 @@ import domain.puertos.CuentaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CuentaServiceImpl implements CuentaService {
@@ -23,19 +22,15 @@ public class CuentaServiceImpl implements CuentaService {
     }
 
     @Override
-    public Cuenta updateCuenta(Cuenta cuenta) {
+    public Cuenta updateCuenta(Long id, Cuenta cuenta) {
         return this.cuentaRepository.save(cuenta);
     }
 
     @Override
-    public void deleteCuenta(Cuenta cuenta) {
-        this.cuentaRepository.delete(cuenta);
+    public void deleteCuenta(Long id) {
+        this.cuentaRepository.deleteById(id);
     }
 
-    @Override
-    public Optional<Cuenta> findCuentaById(String id) {
-        return this.cuentaRepository.findById(Long.valueOf(id));
-    }
 
     @Override
     public List<Cuenta> findAllCuentas() {
