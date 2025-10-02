@@ -9,6 +9,5 @@ import java.util.List;
 @Repository
 public interface CuentaRepository extends CrudRepository<Cuenta, Long > {
 
-    List<Cuenta> findAllById(Long id);
-    List<Cuenta> findAllByOrderBySaldoDesc();
+    List<Cuenta> findAll();
 }

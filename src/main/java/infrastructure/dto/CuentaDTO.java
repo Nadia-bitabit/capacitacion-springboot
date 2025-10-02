@@ -2,6 +2,7 @@ package infrastructure.dto;
 
 import domain.modelo.Cuenta;
 
+
 public class CuentaDTO {
     private Long id;
     private float saldo;

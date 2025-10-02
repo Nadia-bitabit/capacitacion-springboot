@@ -1,6 +1,7 @@
 package infrastructure;
 
 import application.CuentaService;
+import application.impl.CuentaServiceImpl;
 import domain.modelo.Cuenta;
 import infrastructure.dto.CuentaDTO;
 import org.slf4j.Logger;
@@ -13,14 +14,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/cuentas")
+@RequestMapping("/api")
 public class CuentaController {
     private static final Logger logger = LoggerFactory.getLogger(CuentaController.class);
 
     @Autowired
     private CuentaService cuentaService;
 
-    @GetMapping
+    // Endpoint para listar todas las cuentas
+    @GetMapping("/cuentas")
     public ResponseEntity<List <Cuenta>> obtenerCuentas() {
         List<Cuenta> cuentas = cuentaService.findAllCuentas();
         return ResponseEntity.ok().body(cuentas);
@@ -35,4 +37,5 @@ public class CuentaController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
+    
 }

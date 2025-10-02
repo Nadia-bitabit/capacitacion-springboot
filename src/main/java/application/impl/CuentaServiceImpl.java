@@ -3,9 +3,12 @@ package application.impl;
 import application.CuentaService;
 import domain.modelo.Cuenta;
 import domain.puertos.CuentaRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
+@Service
 public class CuentaServiceImpl implements CuentaService {
 
     private final CuentaRepository cuentaRepository;
@@ -30,8 +33,8 @@ public class CuentaServiceImpl implements CuentaService {
     }
 
     @Override
-    public Cuenta findCuentaById(String id) {
-        return this.findCuentaById(id);
+    public Optional<Cuenta> findCuentaById(String id) {
+        return this.cuentaRepository.findById(Long.valueOf(id));
     }
 
     @Override
