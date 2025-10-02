@@ -2,7 +2,9 @@ package application.impl;
 
 import application.CuentaService;
 import domain.modelo.Cuenta;
-import infrastructure.CuentaRepository;
+import domain.puertos.CuentaRepository;
+
+import java.util.List;
 
 public class CuentaServiceImpl implements CuentaService {
 
@@ -30,5 +32,10 @@ public class CuentaServiceImpl implements CuentaService {
     @Override
     public Cuenta findCuentaById(String id) {
         return this.findCuentaById(id);
+    }
+
+    @Override
+    public List<Cuenta> findAllCuentas() {
+        return (List<Cuenta>) cuentaRepository.findAll();
     }
 }

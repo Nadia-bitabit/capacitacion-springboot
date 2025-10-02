@@ -1,41 +1,24 @@
 package domain.modelo;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
 
+@Entity
+@jakarta.persistence.Table(name = "cuenta")
 public class Cuenta {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Getter
+    @Setter
     private Long id;
-    private String numero;
-    private String tipo;
+    @Setter
+    @Getter
     private float saldo;
 
-    public Cuenta(String numero, String tipo, float saldo) {
-        this.numero = numero;
-        this.tipo = tipo;
-        this.saldo = saldo;
+    public Cuenta() {
     }
-    public String getNumero() {
-        return numero;
-    }
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
-    public String getTipo() {
-        return tipo;
-    }
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-    public float getSaldo() {
-        return saldo;
-    }
-    public void setSaldo(float saldo) {
-        this.saldo = saldo;
-    }
-
-
 }
