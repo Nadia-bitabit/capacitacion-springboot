@@ -18,6 +18,13 @@ public class Cuenta {
     @Setter
     @Getter
     private float saldo;
+    @Setter
+    @Getter
+    private Enum tipoCuenta;
+    @Setter
+    @Getter
+    private String nombreTitular;
+
 
     public Cuenta() {
     }

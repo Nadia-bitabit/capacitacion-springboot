@@ -10,4 +10,5 @@ import java.util.List;
 public interface CuentaRepository extends CrudRepository<Cuenta, Long > {
 
     List<Cuenta> findAll();
+    boolean existsByNombreTitular(String nombreTitular);
 }
