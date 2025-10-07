@@ -17,7 +17,7 @@ public class Cuenta {
     private Long id;
     @Setter
     @Getter
-    private float saldo;
+    private double saldo;
     @Setter
     @Getter
     private Enum tipoCuenta;

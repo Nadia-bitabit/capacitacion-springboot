@@ -40,7 +40,7 @@ public class CuentaServiceImpl implements CuentaService {
     public void deleteCuenta(Long id) {
         this.cuentaRepository.deleteById(id);
     }
-    
+
     @Override
     public List<Cuenta> findAllCuentas() {
         return (List<Cuenta>) cuentaRepository.findAll();
