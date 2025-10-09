@@ -1,9 +1,9 @@
-package infrastructure;
+package com.example.demo.infrastructure;
 
-import application.CuentaService;
-import domain.modelo.Cuenta;
-import domain.modelo.exception.NombreInvalido;
-import infrastructure.dto.CuentaDTO;
+import com.example.demo.application.CuentaService;
+import com.example.demo.domain.modelo.Cuenta;
+import com.example.demo.domain.modelo.exception.NombreInvalido;
+import com.example.demo.infrastructure.dto.CuentaDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.slf4j.Logger;

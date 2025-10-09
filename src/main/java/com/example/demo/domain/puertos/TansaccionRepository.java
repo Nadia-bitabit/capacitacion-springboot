@@ -1,6 +1,6 @@
-package domain.puertos;
+package com.example.demo.domain.puertos;
 
-import domain.modelo.Transaccion;
+import com.example.demo.domain.modelo.Transaccion;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

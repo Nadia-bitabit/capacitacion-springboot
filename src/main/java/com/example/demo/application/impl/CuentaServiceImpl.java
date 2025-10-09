@@ -1,9 +1,9 @@
-package application.impl;
+package com.example.demo.application.impl;
 
-import application.CuentaService;
-import domain.modelo.Cuenta;
-import domain.modelo.exception.NombreInvalido;
-import domain.puertos.CuentaRepository;
+import com.example.demo.application.CuentaService;
+import com.example.demo.domain.modelo.Cuenta;
+import com.example.demo.domain.modelo.exception.NombreInvalido;
+import com.example.demo.domain.puertos.CuentaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

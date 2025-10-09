@@ -1,7 +1,6 @@
-package infrastructure.dto;
+package com.example.demo.infrastructure.dto;
 
-import domain.modelo.Cuenta;
-import domain.modelo.Transaccion;
+import com.example.demo.domain.modelo.Transaccion;
 
 public class TransaccionDTO {
     private Long id;

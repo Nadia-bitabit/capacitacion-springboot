@@ -1,22 +1,25 @@
-package application.impl;
+package com.example.demo.application.impl;
 
-import application.TransaccionService;
-import domain.modelo.Transaccion;
-import domain.puertos.TansaccionRepository;
+import com.example.demo.application.TransaccionService;
+import com.example.demo.domain.modelo.Transaccion;
+import com.example.demo.domain.puertos.TansaccionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
 public class TransaccionServiceImpl implements TransaccionService {
 
+    @Autowired
     private final TansaccionRepository transaccionRepository;
-    private final KafkaTemplate<String, Transaccion> kafkaTemplate;
+    @Autowired
+    private final KafkaTemplate<String, Object> kafkaTemplate;
     private final String topic;
 
 
     //Constructor con un Productor, se utiliza kafka template
-    public TransaccionServiceImpl(TansaccionRepository transaccionRepository, KafkaTemplate<String, Transaccion> kafkaTemplate,
-                                  String topic) {
+    @Autowired
+    public TransaccionServiceImpl(TansaccionRepository transaccionRepository, KafkaTemplate<String, Object> kafkaTemplate) {
         this.transaccionRepository = transaccionRepository;
         this.kafkaTemplate = kafkaTemplate;
         this.topic = "transaccion";

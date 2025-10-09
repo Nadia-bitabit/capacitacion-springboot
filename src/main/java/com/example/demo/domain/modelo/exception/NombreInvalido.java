@@ -1,4 +1,4 @@
-package domain.modelo.exception;
+package com.example.demo.domain.modelo.exception;
 
 public class NombreInvalido extends RuntimeException {
 

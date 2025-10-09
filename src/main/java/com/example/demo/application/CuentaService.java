@@ -1,6 +1,6 @@
-package application;
+package com.example.demo.application;
 
-import domain.modelo.Cuenta;
+import com.example.demo.domain.modelo.Cuenta;
 
 import java.util.List;
 

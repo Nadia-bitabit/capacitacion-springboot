@@ -1,6 +1,6 @@
-package application;
+package com.example.demo.application;
 
-import domain.modelo.Transaccion;
+import com.example.demo.domain.modelo.Transaccion;
 
 public interface TransaccionService {
 

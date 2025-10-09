@@ -1,7 +1,9 @@
-package infrastructure;
+package com.example.demo.infrastructure;
 
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ConsumidorEventTransaccion {
 
     public ConsumidorEventTransaccion() {

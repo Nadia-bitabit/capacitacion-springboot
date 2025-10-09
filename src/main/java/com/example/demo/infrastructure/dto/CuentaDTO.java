@@ -1,6 +1,6 @@
-package infrastructure.dto;
+package com.example.demo.infrastructure.dto;
 
-import domain.modelo.Cuenta;
+import com.example.demo.domain.modelo.Cuenta;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 
