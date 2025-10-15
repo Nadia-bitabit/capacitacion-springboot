@@ -4,6 +4,8 @@ import com.example.demo.application.CuentaService;
 import com.example.demo.domain.modelo.Cuenta;
 import com.example.demo.domain.modelo.exception.NombreInvalido;
 import com.example.demo.infrastructure.dto.CuentaDTO;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@Tag(name = "Cuentas", description = "Operaciones relacionadas con cuentas bancarias")
 public class CuentaController {
     private static final Logger logger = LoggerFactory.getLogger(CuentaController.class);
 
@@ -22,12 +25,14 @@ public class CuentaController {
     private CuentaService cuentaService;
 
     // Endpoint para listar todas las cuentas
+    @Operation(summary = "Listar cuentas", description = "Devuelve todas las cuentas registradas")
     @GetMapping("/cuentas")
     public ResponseEntity<List<Cuenta>> obtenerCuentas() {
         List<Cuenta> cuentas = cuentaService.findAllCuentas();
         return ResponseEntity.ok().body(cuentas);
     }
 
+    @Operation(summary = "Crear una cuenta", description = "Crea una nueva cuenta en el sistema")
     @PostMapping("/crear")
     public ResponseEntity<?> crearCuenta(@RequestBody CuentaDTO cuenta) {
         try {
@@ -42,6 +47,7 @@ public class CuentaController {
     }
 
     // Endpoint para actualizar cuenta
+    @Operation(summary = "Actualiza una cuenta", description = "Actualiza una cuenta en el sistema")
     @PutMapping("/{id}")
     public ResponseEntity<?> actualizarCuenta(@PathVariable Long id, @RequestBody CuentaDTO cuenta) {
         try {
@@ -54,7 +60,7 @@ public class CuentaController {
         }
     }
 
-
+    @Operation(summary = "Elimina una cuenta", description = "Elimina una cuenta en el sistema")
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminarCuenta(@PathVariable Long id) {
         try {

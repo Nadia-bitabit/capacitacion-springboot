@@ -3,6 +3,7 @@ package com.example.demo.infrastructure;
 import com.example.demo.application.TransaccionService;
 import com.example.demo.domain.modelo.Transaccion;
 import com.example.demo.infrastructure.dto.TransaccionDTO;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/transaccion")
+@Tag(name = "Transaccion", description = "Operaciones relacionadas con cuentas bancarias")
 public class TransaccionController {
     private static final Logger logger = LoggerFactory.getLogger(TransaccionController.class);
     @Autowired

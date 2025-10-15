@@ -1,11 +1,15 @@
 package com.example.demo.infrastructure.dto;
 
 import com.example.demo.domain.modelo.Cuenta;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 
 public class CuentaDTO {
+    @Schema(description = "ID único del titular de la cuenta", example = "1", required = true)
     private Long id;
+    @Schema(description = "Saldo inicial de la cuenta (mínimo 0)", example = "100.00", required = true)
     private double saldo;
+    @Schema(description = "Nombre único del titular de la cuenta", example = "Juan", required = true)
     private String nombreTitular;
 
     public CuentaDTO(Long id, double saldo, String nombreTitular) {
